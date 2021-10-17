@@ -13,7 +13,7 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 For example your running this from your home network at a Raspberry Pi or Linux Computer you don't have to configure dyndns settings in your home router. You have to just configure your open ports for incoming traffic to your destination. 
 
 # Example build for home
-- cloud.foo.bar (Port 443, public domain, GoDaddy / Namecheap registrated) -> Cloudflare integrated -> ||| here begins your home network ||| -> your home pi update the dns records from your public router ip to cloudflare for cloud.foo.bar -> you have to configure in your home router, that you accept port 443 incoming to your cloud-server (virtual machine, another pi, ...)
+- cloud.foo.bar (Port 443, public domain, GoDaddy / Namecheap registrated) **->** Cloudflare integrated **-> ||| 🏠 here begins your home network 🏠 ||| ->** your home pi update the dns records from your public router ip to cloudflare for cloud.foo.bar **->** you have to configure in your home router, that you accept port 443 incoming to your cloud-server (virtual machine, another pi, ...)
 
 After this, you can reach the home internal cloud machine from all over the world. 
 
