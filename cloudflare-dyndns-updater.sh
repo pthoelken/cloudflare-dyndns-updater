@@ -1,13 +1,12 @@
 #!/bin/bash -ex
 # Cloudflare as Dynamic DNS Updater
 
-# ---> Update these variables with your relevants input
-auth_email="your email addr" # your cloudflare login email address
-auth_key="your api key" # your cloudflare general or specific api key from https://dash.cloudflare.com/profile/api-tokens
-zone_name="your main dns zone" # e.g. mydomain.com
-record_name="your specified dns record name" # e.g. subdomain.mydomain.com OR mydomain.com
-proxied=true # If you want to secure your home ip address and use Cloudflare proxy features. Not recommended for vpn or other direct ip services. Recommended for HTTP/HTTPS services.
-ttl="1800" # Your domain time to live time
+# ---> Fill out the .env file with your credentials
+if [ -f .env ]; then
+    source .env
+else
+    mv .env.tpl .env
+fi
 
 # ---> Do not edit variables from here
 tmpfolder=/tmp/cloudflare-dyndns-updater
