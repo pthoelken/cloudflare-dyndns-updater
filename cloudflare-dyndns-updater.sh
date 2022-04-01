@@ -6,6 +6,8 @@ if [ -f .env ]; then
     source .env
 else
     mv .env.tpl .env
+    echo -e "[$(date)] - .env file is created. Please fill this file with your Cloudflare credentials"
+    exit 1
 fi
 
 # ---> Do not edit variables from here
