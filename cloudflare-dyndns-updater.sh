@@ -47,7 +47,7 @@ function updateIPToCloudflare() {
     if [ -f $ip_file ]; then
         old_ip=$(cat $ip_file)
         if [ $ip == $old_ip ]; then
-            ConsoleLog "IP has not changed."
+            ConsoleLog "The ip address not changed. You have still the IP address $old_ip"
             exit 0
         fi
     fi
