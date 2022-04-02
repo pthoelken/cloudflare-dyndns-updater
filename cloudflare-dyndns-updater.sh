@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 # Cloudflare as Dynamic DNS Updater
 
 cd "$(dirname "$(readlink -f "$0")")"
