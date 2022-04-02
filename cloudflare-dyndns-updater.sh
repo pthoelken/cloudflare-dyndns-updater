@@ -1,11 +1,16 @@
 #!/bin/bash -ex
 # Cloudflare as Dynamic DNS Updater
 
+cd "$(dirname "$(readlink -f "$0")")"
+
+envTemplate=".env.tpl.sh"
+envFile=".env.sh"
+
 # ---> Fill out the .env file with your credentials
-if [ -f .env ]; then
-    source .env
+if [ -f $envFile ]; then
+    source $envFile
 else
-    mv .env.tpl .env
+    mv $envTemplate $envFile
     echo -e "[$(date)] - .env file is created. Please fill this file with your Cloudflare credentials"
     exit 1
 fi
@@ -25,8 +30,6 @@ fi
 if [ ! -d $tmpfolder ]; then
     mkdir -p $tmpfolder
 fi
-
-cd "$(dirname "$(readlink -f "$0")")"
 
 ConsoleLog() {
     if [ "$1" ]; then
