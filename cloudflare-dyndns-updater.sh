@@ -1,5 +1,8 @@
 #!/bin/bash -e
+
 # Cloudflare as Dynamic DNS Updater
+# Author: Patrick Thoelken
+# GitHub Repository: https://github.com/pthoelken/cloudflare-dyndns-updater
 
 if [ "$EUID" -ne 0 ]; then
     echo -e "[$(date)] - $0 must be run as sudo. Application exit."
@@ -11,7 +14,6 @@ cd "$(dirname "$(readlink -f "$0")")"
 envTemplate=".env.tpl.sh"
 envFile=".env.sh"
 
-# ---> Fill out the .env file with your credentials
 if [ -f $envFile ]; then
     source $envFile
 else
@@ -20,15 +22,14 @@ else
     exit 1
 fi
 
-# ---> Do not edit variables from here
-tmpfolder=/tmp/cloudflare-dyndns-updater
+logFolder=/var/log/cloudflare-dyndns-updater
 ip=$(curl -s https://ipv4.icanhazip.com)
-ip_file="$tmpfolder/cloudflare.ips"
-id_file="$tmpfolder/cloudflare.ids"
-log_file="$tmpfolder/cloudflare.log"
+ip_file="$logFolder/cloudflare.ips"
+id_file="$logFolder/cloudflare.ids"
+log_file="$logFolder/cloudflare.log"
 
-if [ ! -d $tmpfolder ]; then
-    mkdir -p $tmpfolder
+if [ ! -d $logFolder ]; then
+    mkdir -p $logFolder
 fi
 
 ConsoleLog() {

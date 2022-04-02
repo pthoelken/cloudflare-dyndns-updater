@@ -1,21 +1,22 @@
-# your cloudflare login email address
-auth_email="your email addr"
+# Your Cloudflare email address for login
+auth_email="foobar@example.com"
 
-# your cloudflare general or specific api key 
+# The Cloudflare general or specific api key
 # from https://dash.cloudflare.com/profile/api-tokens
-auth_key="your api key"
+auth_key="YOUR_CLOUDFLARE_API_KEY"
 
-# e.g. mydomain.com
-zone_name="your main dns zone"
+# The main dns zone for example "foobar.com"
+zone_name="YOUR_MAIN_DNS_ZONE"
 
-# e.g. subdomain.mydomain.com OR mydomain.com
-record_name="your specified dns record name" 
+# The subdomain which you want to update daily
+# for example "subdomain.foobar.com"
+record_name="YOUR_SUBDOMAIN_FROM_DNS_ZONE"
 
-# If you want to secure your home ip address 
-# and use Cloudflare proxy features. Not recommended 
-# for vpn or other direct ip services. 
-# Recommended for HTTP/HTTPS services.
-proxied=true 
+# If you want to secure your home ip address
+# and use Cloudflare proxy features.
+# Not recommended for vpn or other direct
+# ip services. Recommended for HTTP/HTTPS services.
+proxied=true
 
-# Your domain time to live time
-ttl="1800" 
+# Time To Live for your sub domain entry
+ttl="1800"
