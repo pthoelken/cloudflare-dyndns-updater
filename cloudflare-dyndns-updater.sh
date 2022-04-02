@@ -121,7 +121,6 @@ function showLog () {
 
 }
 
-
 case "$1" in
         "--cleanup")
         housekeeping
