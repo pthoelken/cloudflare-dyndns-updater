@@ -11,7 +11,7 @@ if [ -f $envFile ]; then
     source $envFile
 else
     mv $envTemplate $envFile
-    echo -e "[$(date)] - .env file is created. Please fill this file with your Cloudflare credentials"
+    echo -e "[$(date)] - $envFile file is created. Please fill this file with your Cloudflare credentials"
     exit 1
 fi
 
