@@ -1,6 +1,11 @@
 #!/bin/bash -e
 # Cloudflare as Dynamic DNS Updater
 
+if [ "$EUID" -ne 0 ]; then
+    echo -e "[$(date)] - $0 must be run as sudo. Application exit."
+    exit 1
+fi
+
 cd "$(dirname "$(readlink -f "$0")")"
 
 envTemplate=".env.tpl.sh"
@@ -21,11 +26,6 @@ ip=$(curl -s https://ipv4.icanhazip.com)
 ip_file="$tmpfolder/cloudflare.ips"
 id_file="$tmpfolder/cloudflare.ids"
 log_file="$tmpfolder/cloudflare.log"
-
-if [ "$EUID" -ne 0 ]; then
-    echo -e "[$(date)] - $0 must be run as sudo. Application exit."
-    exit 1
-fi
 
 if [ ! -d $tmpfolder ]; then
     mkdir -p $tmpfolder
