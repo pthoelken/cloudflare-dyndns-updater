@@ -11,9 +11,13 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 5. Configure the script variables section for your usecase
 6. Run this script manually or automatically by a cronjob
 
+* sudo nano /etc/crontab
+* `0 */6 * * *     root    /opt/scripts/cloudflare-dyndns-updater/cloudflare-dyndns-updater.sh`
+
 ## Run usage Example
-* sudo ./cloudflare-dyndns-updater.sh --help
-* sudo ./cloudflare-dyndns-updater.sh --Cleanup
+* s1udo ./cloudflare-dyndns-updater.sh --help
+* sudo ./cloudflare-dyndns-updater.sh --cleanup
+* sudo ./cloudflare-dyndns-updater.sh --log
 * sudo ./cloudflare-dyndns-updater.sh --update
 
 Last one open the necessary ports from your router to the linux server / RaspberryPi which you want to reach from the internet.

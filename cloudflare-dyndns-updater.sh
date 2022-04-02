@@ -98,6 +98,7 @@ function helpManual() {
     echo -e ""
     echo -e "$0 --update: Update your ip address to cloudflare and save results to $tmpfolder"
     echo -e "$0 --cleanup: Cleanup the $tmpfolder Folder"
+    echo -e "$0 --log: Show the current log from $log_file"
     echo -e "$0 --help: Shows you the help manual."
     echo -e ""
 }
@@ -107,6 +108,20 @@ function housekeeping() {
     echo -e "[$(date)] - $tmpfolder cleanup complete."
 }
 
+function showLog () {
+
+    if [ -d $logFolder ]; then
+        if [ -f $log_file ]; then
+            cat $log_file
+        fi
+    else
+        ConsoleLog "Log file $log_file was not found. Log can't display."
+        exit 1
+    fi 
+
+}
+
+
 case "$1" in
         "--cleanup")
         housekeeping
@@ -114,6 +129,9 @@ case "$1" in
         "--update")
         CheckFileContent $id_file
         updateIPToCloudflare
+        ;;
+        "--log")
+        showLog
         ;;
         "--help")
         helpManual
