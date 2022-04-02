@@ -12,7 +12,7 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 6. Run this script manually or automatically by a cronjob
 
 * sudo nano /etc/crontab
-* `0 */6 * * *     root    /opt/scripts/cloudflare-dyndns-updater/cloudflare-dyndns-updater.sh`
+* `0 */6 * * *     root    /opt/scripts/cloudflare-dyndns-updater/cloudflare-dyndns-updater.sh --update`
 
 ## Run usage Example
 * s1udo ./cloudflare-dyndns-updater.sh --help
