@@ -15,12 +15,18 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 * `0 */6 * * *     root    /opt/scripts/cloudflare-dyndns-updater/cloudflare-dyndns-updater.sh --update`
 
 ## Run usage Example
-* s1udo ./cloudflare-dyndns-updater.sh --help
+* sudo ./cloudflare-dyndns-updater.sh --help
 * sudo ./cloudflare-dyndns-updater.sh --cleanup
 * sudo ./cloudflare-dyndns-updater.sh --log
 * sudo ./cloudflare-dyndns-updater.sh --update
 
 Last one open the necessary ports from your router to the linux server / RaspberryPi which you want to reach from the internet.
+
+# Update Script
+Switch to the directory where the script is located.
+1. `sudo git reset --hard`
+2. `sudo git pull`
+3. `sudo chmod +x cloudflare-dyndns-updater.sh`
 
 # Example build for home
 - cloud.foo.bar (Port 443, public domain, GoDaddy / Namecheap registrated) **->** Cloudflare integrated **-> ||| 🏠 here begins your home network 🏠 ||| ->** your home pi update the dns records from your public router ip to cloudflare for cloud.foo.bar **->** you have to configure in your home router, that you accept port 443 incoming to your cloud-server (virtual machine, another pi, ...)
