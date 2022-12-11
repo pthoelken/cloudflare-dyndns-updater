@@ -16,7 +16,7 @@ config_record_name="YOUR_SUBDOMAIN_FROM_DNS_ZONE"
 # and use Cloudflare proxy features.
 # Not recommended for vpn or other direct
 # ip services. Recommended for HTTP/HTTPS services.
-config_proxied=true
+config_proxied=false
 
 # Time To Live for your sub domain entry
 config_ttl="1800"
