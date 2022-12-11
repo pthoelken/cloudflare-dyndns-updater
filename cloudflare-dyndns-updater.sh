@@ -138,6 +138,10 @@ case "$1" in
         *)
         echo -e ""
         echo -e "Unknown argument for $0 please use { --cleanup | --update | --help }"
+        echo -e "Configuration Mode: $0 --update --config-mode"
+        echo -e "Argument Mode: $0 --update --argument-mode foobar@example.com YOUR_CLOUDFLARE_API_KEY YOUR_MAIN_DNS_ZONE YOUR_SUBDOMAIN_FROM_DNS_ZONE false 1800"
+        echo -e ""
+        echo -e "For more informations check the GitHub Repository README.md page at: https://github.com/pthoelken/cloudflare-dyndns-updater"
         helpManual
         exit 1
         ;;

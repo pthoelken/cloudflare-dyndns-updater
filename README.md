@@ -25,13 +25,13 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 
 ## Commands Example
 
-# argument-mode
+### argument-mode
 
 In argument-mode you can run the script with your sesstings out from the commandline. This is useful for updating more than one different domain / subdomain from one host
 
 - `cloudflare-dyndns-updater.sh --update foobar@example.com YOUR_CLOUDFLARE_API_KEY YOUR_MAIN_DNS_ZONE YOUR_SUBDOMAIN_FROM_DNS_ZONE false 1800`
 
-# config-mode
+### config-mode
 
 If you have just one domain to update it you can use this script in config-mode. In this case you have to fill out the information in the .env file which will be created if you've run this at the first time.
 
