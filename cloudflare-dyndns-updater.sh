@@ -11,8 +11,8 @@ fi
 
 cd "$(dirname "$(readlink -f "$0")")"
 
-envTemplate=".env.tpl.sh"
-envFile=".env.sh"
+envTemplate=".env.tpl"
+envFile=".env"
 
 if [ -f $envFile ]; then
     source $envFile
@@ -34,7 +34,7 @@ fi
 
 ConsoleLog() {
     if [ "$1" ]; then
-        echo -e "[$(date)] - $1" | tee -a $log_file
+        echo -e "[$(date)] | $record_name | $1" | tee -a $log_file
     fi
 }
 
