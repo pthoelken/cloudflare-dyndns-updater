@@ -25,6 +25,15 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 
 ## Commands Example
 
+### arguments describe
+
+- foobar@example.com = Your Cloudflare login email address
+- YOUR_CLOUDFLARE_API_KEY = Your global Cloudflare API key from https://dash.cloudflare.com/profile/api-tokens
+- YOUR_MAIN_DNS_ZONE = The main dns zone for example "foobar.com"
+- YOUR_SUBDOMAIN_FROM_DNS_ZONE = he subdomain which you want to update daily for example "subdomain.foobar.com"
+- false = If you want to secure your home ip address and use Cloudflare proxy features. Not recommended for vpn or other direct ip services. Recommended for HTTP/HTTPS services.
+- 1800 = Time To Live for your sub domain entry
+
 ### argument-mode
 
 In argument-mode you can run the script with your sesstings out from the commandline. This is useful for updating more than one different domain / subdomain from one host
