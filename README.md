@@ -14,14 +14,14 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 6. Run this script manually or automatically by a cronjob
 
 - sudo nano /etc/crontab
-- `0 */6 * * *     root    /opt/scripts/cloudflare-dyndns-updater/cloudflare-dyndns-updater.sh --update`
+- `0 */6 * * *     root    cloudflare-dyndns-updater.sh --update --argument-mode foobar@example.com YOUR_CLOUDFLARE_API_KEY YOUR_MAIN_DNS_ZONE YOUR_SUBDOMAIN_FROM_DNS_ZONE false 1800`
 
 ## Run usage Example
 
 - sudo ./cloudflare-dyndns-updater.sh --help
 - sudo ./cloudflare-dyndns-updater.sh --cleanup
 - sudo ./cloudflare-dyndns-updater.sh --log
-- sudo ./cloudflare-dyndns-updater.sh --update
+- sudo ./cloudflare-dyndns-updater.sh --update --config-mode/--argument-mode
 
 ## Commands Example
 
@@ -40,13 +40,13 @@ First of all, you have to register a domain at GoDaddy for example and set the n
 
 In argument-mode you can run the script with your sesstings out from the commandline. This is useful for updating more than one different domain / subdomain from one host
 
-- `cloudflare-dyndns-updater.sh --update foobar@example.com YOUR_CLOUDFLARE_API_KEY YOUR_MAIN_DNS_ZONE YOUR_SUBDOMAIN_FROM_DNS_ZONE false 1800`
+- `cloudflare-dyndns-updater.sh --update --argument-mode foobar@example.com YOUR_CLOUDFLARE_API_KEY YOUR_MAIN_DNS_ZONE YOUR_SUBDOMAIN_FROM_DNS_ZONE false 1800`
 
 ### config-mode
 
 If you have just one domain to update it you can use this script in config-mode. In this case you have to fill out the information in the .env file which will be created if you've run this at the first time.
 
-- `cloudflare-dyndns-updater.sh --update`
+- `cloudflare-dyndns-updater.sh --update --config-mode`
 
 Last one open the necessary ports from your router to the linux server / RaspberryPi which you want to reach from the internet.
 
